@@ -42,7 +42,7 @@ export function HeroWelcomeComponent() {
                     zIndex: 1, // Set a higher z-index than the image
                     padding: '10px', // Add your desired padding
                     width: `${paperWidth}%`,
-                    marginTop:'10px',
+                    marginTop:'-16px',
                     marginLeft:`${paperMarginLeft}%`,
                     
                   }}>
@@ -61,12 +61,13 @@ export function HeroWelcomeComponent() {
       </Grid.Col>
       {!isSmallScreen && (
       <Grid.Col span={6} style={{marginTop:'3%'}}>
+        <Paper shadow="xl">
             <Image
               style={{}}
               src="https://img.freepik.com/free-photo/cyber-monday-shopping-sales_23-2148688501.jpg?w=1380&t=st=1696685842~exp=1696686442~hmac=c8c455088ffb1a6962943f57dc4af487b63ee946457c1729950b32e39da6a9e2"
               className={classes.image}
             />
-         
+         </Paper>
       </Grid.Col>
       )}
     </Grid>

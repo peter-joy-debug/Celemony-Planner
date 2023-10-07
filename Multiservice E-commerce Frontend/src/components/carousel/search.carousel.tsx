@@ -22,6 +22,8 @@ import {
     Checkbox, } from '@mantine/core';
     import { DatePickerInput } from '@mantine/dates';
     import React, { useState } from 'react';
+    import {HouseSearchForm} from './searchForms/house.form';
+    
 
     const useStyles = createStyles((theme) => ({
       root: {
@@ -64,7 +66,7 @@ export function SearchCarousel() {
     </Tabs.List>
     
         <Tabs.Panel value="gallery" pt="xs" >
-        Gallery tab content
+        <HouseSearchForm/>
 
         </Tabs.Panel>
 
