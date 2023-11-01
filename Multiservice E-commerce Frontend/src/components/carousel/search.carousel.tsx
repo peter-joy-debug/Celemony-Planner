@@ -85,3 +85,7 @@ export function SearchCarousel() {
 
   );
 }
+
+{/* <Tabs.Panel value="messages" pt="xs" hidden={activeTab !== 'messages'}>
+Messages tab content
+</Tabs.Panel> */}

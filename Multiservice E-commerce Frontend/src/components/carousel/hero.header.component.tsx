@@ -22,7 +22,7 @@ export function HeroWelcomeComponent() {
   const colSpan = isSmallScreen ? 12 : 6;
   const paperWidth = isSmallScreen ? 96 : 40;
   const paperMarginLeft = isSmallScreen ? 0 : 12.1;
-  const paperMarginBottom = isSmallScreen ? 200 : 0;
+  const paperMarginBottom = isSmallScreen ? 520 : 0;
   return (
     <Container size="xl" style={{marginBottom:`${paperMarginBottom}px`,}}>
             <Grid>
@@ -42,7 +42,7 @@ export function HeroWelcomeComponent() {
                     zIndex: 1, // Set a higher z-index than the image
                     padding: '10px', // Add your desired padding
                     width: `${paperWidth}%`,
-                    marginTop:'-16px',
+                    marginTop:'-0px',
                     marginLeft:`${paperMarginLeft}%`,
                     
                   }}>

@@ -1,17 +1,13 @@
+import React, { useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem, Container, Overlay,Card } from '@mantine/core';
+import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem, Container, Tabs } from '@mantine/core';
+import {CategoryHousesComponent} from './products/category.houses.component';
+import {CategoryVehiclesComponent} from './products/category.vehicles.component';
+
 
 const useStyles = createStyles((theme) => ({
-  card: {
-    height: rem(400),
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -31,153 +27,20 @@ const useStyles = createStyles((theme) => ({
     marginTop: theme.spacing.xs,
   },
 
-  category: {
-    color: theme.white,
-    opacity: 0.7,
-    fontWeight: 700,
-    textTransform: 'uppercase',
-  },
-  controls: {
-    color: 'green',
-    fontSize: rem(24),
-    position: 'absolute',
-    marginTop:rem(-20),
-    marginLeft:'80%',
-    width:'20%',
-    float:'right',
-    top: 0,
-    left: 0,
-    right: 0,
-    display: 'flex',
-    // justifyContent: 'space-between',
-    padding: rem(7),
-    zIndex: 2,
-    background: '#332D2D',
-    borderRadius:'20px',
-    fontSize:'40px',
-    boxShadow: '1px 2px 80px rgba(0,0,0,0.2)',
-
-  },
-  carouselSection:
-  {
-    backgroundColor:'rgba(255,255,255,0.1)',
-    padding:'50px 40px 40px 40px',
-    // marginTop:rem(-55),
-    boxShadow: '1px 2px 50px rgba(0,0,0,0.5)',
-  },
 }));
-
-interface CardProps {
-  image: string;
-  title: string;
-  category: string;
-}
-
-function Cards({ image, title, category }: CardProps) {
-  const { classes } = useStyles();
-
-  return (
-
-
-    <Paper
-      shadow="xl"
-      p="xl"
-      radius="md"
-      sx={{ backgroundImage: `url(${image})` }}
-      className={classes.card}
-      
-    >
-
-      <div>
-      
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
-        <br></br>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
-     </div>
-      <Button variant="white" color="dark">
-        View more
-      </Button>
-   
-    </Paper>
-
-
-
-//     <Paper
-//     shadow="md"
-//     p="xl"
-//     radius="md"
-//     sx={{ backgroundImage: `url(${image})` }}
-//     className={classes.card}
-//     >
-
-//     <div>
-//       <Text className={classes.category} size="xs">
-//         {classes.category}
-//       </Text>
-//       <Title order={3} className={classes.title}>
-//         {classes.title}
-//       </Title>
-//     </div>
-//     <Button variant="white" color="dark">
-//       Read article
-//     </Button>
-//   </Paper>
-  );
-}
-
-const data = [
-  {
-    image:
-      'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Best forests to visit in North America',
-    category: 'nature',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Hawaii beaches review: better than you think',
-    category: 'beach',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Mountains at night: 12 best locations to enjoy the view',
-    category: 'nature',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Aurora in Norway: when to visit for best experience',
-    category: 'nature',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Best places to visit this winter',
-    category: 'tourism',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Active volcanos reviews: travel at your own risk',
-    category: 'nature',
-  },
-];
 
 export function CategoryComponent() {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const { classes } = useStyles();
-  const slides = data.map((item) => (
-    <Carousel.Slide key={item.title}>
-      <Cards {...item} />
-    </Carousel.Slide>
-  ));
+  const [activeTab, setActiveTab] = useState('first');
 
+  const handleTabChange = (tabValue) => {
+    console.log(tabValue);
+    setActiveTab(tabValue);
+  };
+
+const tabValues = ["first", "second", "third", "fourth"];
   return (
     <Container size="xl" shadow="xl" p="md" withBorder style={{marginTop:'-10px'}}>
     <Title order={3} className={classes.titles} style={{color:'black'}}>
@@ -186,28 +49,49 @@ export function CategoryComponent() {
     <br></br>
     <br></br>
 
-    <Carousel
-      slideSize="25%"
-      breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
-      slideGap="xl"
-      align="start"
-      classNames={{controls: classes.controls,}}
-      className={classes.carouselSection}
-    //   className="shadow-effect"
-      slidesToScroll={mobile ? 1 : 2}
+    <Tabs color="gray" defaultValue="first" onChange={handleTabChange} variant="pills">
+  <Tabs.List>
+    <Tabs.Tab value="first" >Houses</Tabs.Tab>
+    <Tabs.Tab value="second" color="gray" >
+      Vehicles
+    </Tabs.Tab>
+    <Tabs.Tab value="third" color="cyan" >
+      Electronics
+    </Tabs.Tab>
+    <Tabs.Tab value="fourth" color="orange" >
+      Furnitures
+    </Tabs.Tab>
+  </Tabs.List>
 
-    >
-      {slides}
-      {/* <style jsx>{`
-              .shadow-effect {
-                box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-              }
-            `}</style> */}
-    </Carousel>
+  <Tabs.Panel value="first" pt="xs">
+    <br></br>
+    <CategoryHousesComponent activeTab={activeTab} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="second" pt="xs">
+    <br></br>
+    <CategoryVehiclesComponent activeTab={activeTab} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="third" pt="xs">
+    Second tab color is blue, it gets this value from props, props have the priority and will override context value
+  </Tabs.Panel>
+
+  <Tabs.Panel value="fourth" pt="xs">
+    Second tab color is blue, it gets this value from props, props have the priority and will override context value
+  </Tabs.Panel>
+</Tabs>
+
+
+
+
+
     <br></br>
     <br></br>
     <br></br>
     <br></br>
+
+
     </Container>
 
 

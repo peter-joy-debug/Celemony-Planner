@@ -226,14 +226,14 @@ export default function Home() {
     {/* <HeaderMegaMenu onLanguageChange={handleLanguageChange} /> */}
     <HeaderMegaMenu language={language} onLanguageChange={handleLanguageChange} />
     {/* <Carousels/> */}
-    <HeroWelcomeComponent/>
+  <HeroWelcomeComponent/>
     <CategoryComponent/>
     <Features/>
-    <Promotion/> 
+    <Promotion/>  
     {/* <Property/>  */}
     <Property language={language} onLanguageChange={handleLanguageChange} /> 
-    <Testmonial/>
-    <EmailBanner/> 
+    {/* <Testmonial/>
+    <EmailBanner/>  */}
     {/* <BookingFilter/>  */}
     {/* <BookingFilter products={products} /> */}
     <FooterLinks data={data.data} />
