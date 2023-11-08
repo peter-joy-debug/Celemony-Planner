@@ -1,6 +1,8 @@
-import { SimpleGrid, Skeleton, Container, Stack, useMantineTheme, px, Text, Grid,rem } from '@mantine/core';
+import { SimpleGrid, Skeleton, Container, Stack, useMantineTheme, px, Text, Grid,rem,Overlay,Title,Button, Image,Group} from '@mantine/core';
 import {ImageCard} from './category.card';
 import range from '../../assets/img/data.png';
+import { IconBrandAndroid, IconDownload, IconBrandApple } from '@tabler/icons-react';
+// import classes from './HeroContentLeft.module.css';
 
 
 const getChild = (height: number) => <Skeleton height={height} radius="md" animate={false} />;
@@ -43,74 +45,77 @@ export function Promotion() {
   ];
   return (
     
-    <Container my="md" style={{backgroundColor: 'hsl(206.6, 89.7%, 54.1%)', padding:'12px 0px 12px 0px'}} size="xl" fluid>
-    <Container my="md" style={{}} size="xl">
+    <Container my="lg" style={{backgroundColor: 'hsl(0, 0.7%, 80.1%)', padding:'12px 0px 12px 0px'}} size="xl" fluid size="xl">
+    <Container my="lg" style={{}} size="xl">
     <br></br>
       <div style={{marginTop:'-100px',marginLeft:'0px'}}>
       <Text size="xs" 
     style={{    
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
+    borderRadius:'20px',
     color: theme.white,
     lineHeight: 1.2,
     fontSize: rem(30),
-    // borderRadius:'50px',
-    borderTopRightRadius:'200px',
+    backgroundColor:theme.white,
     width:'80%',
+    // boxShadow: '1px 2px 17px rgba(0,0,0,0.7)',
     padding:'20px 20px',
-    backgroundColor:'white',
-    border:'1px solid hsl(206.6, 89.7%, 54.1%)',
-    boxShadow: '1px 2px 50px rgba(0,0,0,0.7)',
+
     color:'black',
     marginTop: theme.spacing.xs,}}>
-          Booking Category
+          Download app 
           <br></br>
       </Text>
 
       <br></br>
       </div>
-      <br></br>
-      <br></br>
-      <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'xs', cols: 1 }]}>
-        {/* {getChild(BASE_HEIGHT)} */}
-        <ImageCard
-        image={imageData[0].image}
-        title={imageData[0].title}
-        author={imageData[0].author}
-        views={imageData[0].views}
-        comments={imageData[0].comments}
-        link={imageData[0].link}
-        sizes={imageData[0].sizes}
-       />
-        <Stack>
-        <ImageCard
-        image={imageData[1].image}
-        title={imageData[1].title}
-        author={imageData[1].author}
-        views={imageData[1].views}
-        comments={imageData[1].comments}
-        link={imageData[1].link}
-        sizes={imageData[1].sizes}
-       />
 
-      <ImageCard
-        image={imageData[2].image}
-        title={imageData[2].title}
-        author={imageData[2].author}
-        views={imageData[2].views}
-        comments={imageData[2].comments}
-        link={imageData[2].link}
-        sizes={imageData[2].sizes}
-       />
-          {/* {getChild(getSubHeight(2, px(theme.spacing.md)))} */}
-        </Stack>
-        <Stack>
-          {getChild(getSubHeight(3, px(theme.spacing.md)))}
-          {getChild(getSubHeight(3, px(theme.spacing.md)))}
-          {getChild(getSubHeight(3, px(theme.spacing.md)))}
-        </Stack>
-        {getChild(BASE_HEIGHT)}
-      </SimpleGrid>
+
+
+
+<div >
+
+      <Container  size="lg" >
+       
+
+        <Grid>
+        <Grid.Col span={4}>
+        {/* <Title style={{color:'rgba(100,100,100,0.9)'}}>Get Our Mobile App!</Title> */}
+        <Text  size="md" mt="xl" pt="xs">
+          Get fully functional accessible Mobile app applications faster than ever – Join
+          more than 20 Million users on Both Android and App Store!
+        </Text>
+        <Group gap="xs" style={{marginBottom:'10px'}}>
+
+          <Button variant="default" color="light" size="lg" radius="md" mt="xl" style={{boxShadow: '1px 2px 17px rgba(0,0,0,0.7)'}}>
+          Android<IconBrandAndroid size={25} />
+          </Button>
+
+          <Button variant="default" color="light" size="lg" radius="md" mt="xl">
+            Apple <IconBrandApple size={25} />
+          </Button>
+        </Group>
+
+        </Grid.Col>
+        <Grid.Col span={8}>
+        <Image
+          radius="xl"
+          h={270}
+          style={{marginTop:'-200px'}}
+          w="auto"
+          fit="contain"
+          src="https://assets.materialup.com/uploads/d5921479-9abb-4d78-993a-308f2a29d73a/preview.gif"
+          // src="https://cdn.dribbble.com/users/10672487/screenshots/17709090/media/6701b4accbfbcde7485cbbcb6ed2272c.jpg"
+          // src="https://d28pk2nlhhgcne.cloudfront.net/assets/app/uploads/sites/3/2020/12/mobile-app-hero2x-en-1830x854.png"
+        />
+        </Grid.Col>
+      </Grid>
+      </Container>
+    </div>
+
+
+
     </Container>
     </Container>
   );

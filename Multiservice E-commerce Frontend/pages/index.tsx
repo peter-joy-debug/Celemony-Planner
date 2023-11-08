@@ -229,11 +229,26 @@ export default function Home() {
   <HeroWelcomeComponent/>
     <CategoryComponent/>
     <Features/>
-    <Promotion/>  
-    {/* <Property/>  */}
     <Property language={language} onLanguageChange={handleLanguageChange} /> 
-    {/* <Testmonial/>
-    <EmailBanner/>  */}
+   
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    {/* <Property/>  */}
+    <Promotion/>  
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Testmonial/>
+    {/* <EmailBanner/>  */}
     {/* <BookingFilter/>  */}
     {/* <BookingFilter products={products} /> */}
     <FooterLinks data={data.data} />

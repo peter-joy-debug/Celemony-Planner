@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem, Container, Tabs } from '@mantine/core';
+import { IconPhoto, IconDownload, IconArrowRight } from '@tabler/icons-react';
 
 
 const useStyles = createStyles((theme) => ({
@@ -86,9 +87,10 @@ interface CardProps {
   image: string;
   title: string;
   category: string;
+  type:string;
 }
 
-function Cards({ image, title, category }: CardProps) {
+function Cards({ image, title, category, type }: CardProps) {
   const { classes } = useStyles();
 
   return (
@@ -103,7 +105,7 @@ function Cards({ image, title, category }: CardProps) {
       className={classes.card}
       
     >
-      <Text className={classes.category} size="xs">
+      <Text className={classes.category} size="xs" style={{backgroundColor:'rgba(0,0,0,0.8)',padding:'2%', color:'#fff',borderRadius:'20px'}}>
         {category}
       </Text>
      
@@ -120,54 +122,18 @@ function Cards({ image, title, category }: CardProps) {
       </Title>
    </div>
    <br></br>
-    <Button variant="white" color="dark">
-      View more
-    </Button>
+   <Button
+        variant="filled"
+        color="rgba(255, 255, 255, 1)"
+      >
+        View more <IconArrowRight size={14} />
+      </Button>
       </Paper>
     </Paper>
   );
 }
 
-const data = [
-  {
-    image:
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Best Villa Houses, Kigali',
-    category: 'nature',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Residential Ascot, Kigali',
-    category: 'beach',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Family Houses, Canada',
-    category: 'nature',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Country Side, Rwanda',
-    category: 'nature',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Best Mansion Houses',
-    category: 'tourism',
-  },
-  {
-    image:
-      'https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Royal Houses, Paris',
-    category: 'nature',
-  },
-];
-
-export function CategoryHousesComponent({ activeTab }) {
+export function CategoryHousesComponent({data}) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const { classes } = useStyles();
@@ -176,11 +142,7 @@ export function CategoryHousesComponent({ activeTab }) {
       <Cards {...item} />
     </Carousel.Slide>
   ));
-  const [isCarouselPaused, setIsCarouselPaused] = useState(activeTab !== 'first');
-  
-  useEffect(() => {
-    setIsCarouselPaused(activeTab !== 'first');
-  }, [activeTab]);
+
 
   return (
 
@@ -192,7 +154,6 @@ export function CategoryHousesComponent({ activeTab }) {
       classNames={{controls: classes.controls,}}
       className={classes.carouselSection}
       slidesToScroll={mobile ? 1 : 2}
-      paused={isCarouselPaused}
     >
         
       {slides}
