@@ -1,7 +1,9 @@
-import { Grid, createStyles, SegmentedControl, rem,useMantineTheme, Container, Text } from '@mantine/core';
+import { Grid, createStyles, SegmentedControl, rem,useMantineTheme, Container, Text, Tabs } from '@mantine/core';
+import { IconPhoto, IconMessageCircle, IconSettings,IconHome2,IconCar,IconDevices,IconSofa } from '@tabler/icons-react';
 import { useState } from 'react';
 import { getDataForTab } from '../../data/propertyData/propertyTabData';
 import {PlaceCard} from '../cards/place.card';
+import {HouseProperty} from './properties/houses.property';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -33,6 +35,7 @@ export function Property({ language, onLanguageChange }) {
   const theme = useMantineTheme();
   const { classes } = useStyles();
   const [activeTab, setActiveTab] = useState('All');
+  const iconStyle = { width: rem(25), height: rem(25) };
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -47,7 +50,7 @@ export function Property({ language, onLanguageChange }) {
   const tabData = ['All', 'AI/ML', 'C++', 'Rust', 'TypeScript'];
   return (
 
-<Container size="xl" >
+<Container size="xl" style={{marginTop:'-7%'}}>
   <br></br>
 <Text size="xs" 
 my="md"
@@ -57,43 +60,48 @@ my="md"
     color: theme.white,
     lineHeight: 1.2,
     fontSize: rem(30),
-    // borderRadius:'50px',
-    // borderTopRightRadius:'200px',
-    // width:'80%',
-    // padding:'20px 20px',
-    // backgroundColor:'white',
-    // border:'1px solid hsl(206.6, 89.7%, 54.1%)',
-    // boxShadow: '1px 2px 50px rgba(0,0,0,0.7)',
     color:'black',
     marginTop: theme.spacing.xs,}}>
           Our products
           <br></br>
       </Text>
-<Container my="md" style={{ textAlign: 'center' }} size="xl">
 
-      <SegmentedControl
-        radius="xl"
-        size="md"
-        data={['All', 'AI/ML', 'C++', 'Rust', 'TypeScript']}
-        classNames={classes}
-        value={activeTab}
-        onChange={handleTabChange}
-      />
-      <br></br>
-      <br></br>
-      <Grid>
-      <Grid.Col xs={12}>
-      <Grid>
-      {getDataForTab(activeTab, language).slice(0, 8).map((item) => (
-        <Grid.Col xs={3}>
-            <PlaceCard title={item.title[language]} description={item.description[language]} />
-        </Grid.Col>
-        ))}
+      <Tabs defaultValue="gallery" placement="center" variant="pills" radius="md">
+        <center>
+      <Tabs.List justify="center" position="center" radius="md">
+        <Tabs.Tab value="gallery" style={{textAlign:'center'}}>
 
-      </Grid>
-      </Grid.Col>
-      </Grid>
-    </Container>
+        <IconHome2 style={iconStyle} /> <br></br>
+        Houses
+        </Tabs.Tab>
+        <Tabs.Tab value="messages" style={{textAlign:'center'}}>
+        <IconCar style={iconStyle} /> <br></br>Vehicles
+        </Tabs.Tab>
+        <Tabs.Tab value="settings" style={{textAlign:'center'}}>
+        <IconDevices style={iconStyle} /><br></br> Electronics
+        </Tabs.Tab>
+        <Tabs.Tab value="settings" style={{textAlign:'center'}}>
+        <IconSofa style={iconStyle} /> <br></br> Furnitures
+        </Tabs.Tab>
+      </Tabs.List>
+      </center>
+      {/* <hr style={{width:'50%'}}></hr> */}
+
+      <Tabs.Panel value="gallery">
+      <HouseProperty language={language} onLanguageChange={handleLanguageChange}/>
+      </Tabs.Panel>
+
+      <Tabs.Panel value="messages">
+        Messages tab content
+      </Tabs.Panel>
+
+      <Tabs.Panel value="settings">
+        Settings tab content
+      </Tabs.Panel>
+    </Tabs>
+
+
+
     </Container>
   );
 }

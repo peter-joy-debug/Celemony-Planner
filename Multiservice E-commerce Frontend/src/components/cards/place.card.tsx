@@ -1,141 +1,10 @@
-// import { createStyles, Image, Card, Text, Group, Button, getStylesRef, rem } from '@mantine/core';
-// import { Carousel } from '@mantine/carousel';
-// import { IconStar } from '@tabler/icons-react';
 
-// const useStyles = createStyles((theme) => ({
-//   price: {
-//     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-//   },
-
-//   carousel: {
-//     '&:hover': {
-//       [`& .${getStylesRef('carouselControls')}`]: {
-//         opacity: 1,
-//       },
-//     },
-//   },
-
-//   carouselControls: {
-//     ref: getStylesRef('carouselControls'),
-//     transition: 'opacity 150ms ease',
-//     opacity: 0,
-//   },
-
-//   carouselIndicator: {
-//     width: rem(4),
-//     height: rem(4),
-//     transition: 'width 250ms ease',
-
-//     '&[data-active]': {
-//       width: rem(16),
-//     },
-//   },
-// }));
-
-// const images = [
-//   'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-//   'https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-//   'https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-//   'https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-//   'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
-// ];
-
-// export function PlaceCard({title,description}) {
-//   const { classes } = useStyles();
-
-//   const slides = images.map((image) => (
-//     <Carousel.Slide key={image}>
-//       <Image src={image} height={220} />
-//     </Carousel.Slide>
-//   ));
-
-//   return (
-//     <Card radius="md" withBorder padding="xl">
-//       <Card.Section>
-//         <Carousel
-//           withIndicators
-//           loop
-//           classNames={{
-//             root: classes.carousel,
-//             controls: classes.carouselControls,
-//             indicator: classes.carouselIndicator,
-//           }}
-//         >
-//           {slides}
-//         </Carousel>
-//       </Card.Section>
-
-//       <Group position="apart" mt="lg">
-//         <Text fw={500} fz="lg">
-//           {title}
-//         </Text>
-
-//         <Group spacing={5}>
-//           <IconStar size="1rem" />
-//           <Text fz="xs" fw={500}>
-//             4.78
-//           </Text>
-//         </Group>
-//       </Group>
-
-//       <Text fz="sm" c="dimmed" mt="sm">
-//         {description}
-//       </Text>
-
-//       <Group position="apart" mt="md">
-//         <div>
-//           <Text fz="xl" span fw={500} className={classes.price}>
-//             397$
-//           </Text>
-//           <Text span fz="sm" c="dimmed">
-//             {' '}
-//             / night
-//           </Text>
-//         </div>
-
-//         <Button radius="md">Book now</Button>
-//       </Group>
-//     </Card>
-//   );
-// }
-
-// import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
-
-// export function PlaceCard({title,description}) {
-//   return (
-//     <Card shadow="sm" padding="lg" radius="md" withBorder>
-//       <Card.Section component="a" href="https://mantine.dev/">
-//         <Image
-//           src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-//           height={160}
-//           alt="Norway"
-//         />
-//       </Card.Section>
-
-//       <Group position="apart" mt="md" mb="xs">
-//         <Text weight={500}>Norway Fjord Adventures</Text>
-//         <Badge color="pink" variant="light">
-//           On Sale
-//         </Badge>
-//       </Group>
-
-//       <Text size="sm" color="dimmed">
-//         With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-//         activities on and around the fjords of Norway
-//       </Text>
-
-//       <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-//         Book classic tour now
-//       </Button>
-//     </Card>
-//   );
-// }
-import { createStyles, Image, Card, Text, Group, Button, getStylesRef, rem,Paper,Badge } from '@mantine/core';
+import { createStyles, Image, Card, Text, Group, Button, getStylesRef, rem,Paper,Badge, Avatar, Tooltip } from '@mantine/core';
 import React, { useState } from 'react';
-import { IconHeart, IconHeartFilled } from '@tabler/icons-react';
+import { IconHeart, IconHeartFilled,IconMapPinFilled,IconUsers,IconStarFilled } from '@tabler/icons-react';
 import styles from './PlaceCard.module.css'; // Import CSS module for styles
 
-export function PlaceCard({ title, description }) {
+export function PlaceCard({ title, description,mode, rate, status, location, price, currency, dealer, post_date, card_image}) {
   const [isHovered, setIsHovered] = useState(false);
   const [isWishlist, setIsWishlist] = useState(false);
 
@@ -155,8 +24,9 @@ export function PlaceCard({ title, description }) {
     >
       <Card.Section component="a">
         <Image
-          src={isHovered ? 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80' : 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80'}
-          height={200}
+          // src={isHovered ? 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80' : 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80'}
+          src={isHovered ? card_image.second : card_image.first}
+          height={243}
           alt="Norway"
         />
         <Paper
@@ -175,20 +45,130 @@ export function PlaceCard({ title, description }) {
           onClick={handleToggleWishlist}
         >
           {isWishlist ? <IconHeartFilled size={30} color="red" style={{ fill: 'tomato' }}/> :  <IconHeart size={30} color="tomato" />}
-          {/* {isWishlist ? <Text weight={500}>fill</Text> : <Text weight={500}>unfill</Text>} */}
         </Paper>
+
+        <Paper
+          padding="xs"
+          style={{
+            position: 'absolute',
+            top: '8px',
+            left: '8px',
+            backgroundColor: 'rgba(255,255,255, 0.9)',
+            borderRadius: '50%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }}
+          onClick={handleToggleWishlist}
+        >
+          <Badge color="gray" variant="light">
+          {mode}
+          </Badge>
+        </Paper>
+
+        <Paper
+          padding="xs"
+          style={{
+            position: 'absolute',
+            top: '210px',
+            left: '110px',
+            width:'160px',
+            backgroundColor: 'rgba(255,255,255, 0.0)',
+            borderRadius: '50%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }}
+          // onClick={handleToggleWishlist}
+        >
+          
+
+
+      <Group mt="5px" position="apart">
+
+      <Tooltip.Group openDelay={300} closeDelay={100} >
+
+      <Avatar.Group spacing="sm" style={{backgroundColor:'rgba(0,0,0,0.099)',padding:'3%',borderRadius:'20px',paddingLeft:'0%',width:'180px',}}>
+
+      <Text size="sm"  style={{paddingBottom:'1px',paddingLeft:'4%'}} color="#fff">
+        {/* <IconUsers size={20} color="gray" />  */}
+        Dealer
+        </Text>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <Tooltip label="Jenner Dania" withArrow>
+              <Avatar  src="https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww" radius="xl" />
+            </Tooltip>
+            <Tooltip label="Peter Joy" withArrow>
+              <Avatar src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww" radius="xl" />
+            </Tooltip>
+            <Tooltip label="Grace Raa" withArrow>
+              <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww" radius="xl" />
+            </Tooltip>
+            {/* <Tooltip
+              withArrow
+              label={
+                <>
+                  <div>John Outcast</div>
+                  <div>Levi Capitan</div>
+                </>
+              }
+            > */}
+              <Avatar radius="xl">+20</Avatar>
+            {/* </Tooltip> */}
+
+          </Avatar.Group>
+          </Tooltip.Group> 
+      {/* <Text  variant="outline" color="dimmed" size="sm">
+          Unfurnished
+        </Text> */}
+        </Group>
+
+
+          {/* </Badge> */}
+        </Paper>
+
       </Card.Section>
 
-      <Group position="apart" mt="md" mb="xs">
-        <Text weight={500}>{title}</Text>
-        <Badge color="pink" variant="light">
-          On Sale
-        </Badge>
+      <Group position="apart" mt="xl" >
+        <Text weight={500} size="lg">
+          {title}
+          
+        </Text>
+        <Text  color="dimmed" size="sm"> 
+          {post_date}      
+        </Text>
+
       </Group>
 
-      <Text size="sm" color="dimmed">
-        {description}
-      </Text>
+      <Group mt="sm"  position="apart">
+        <Text color="dimmed" size="sm">
+          {/* {title} */}
+           <IconMapPinFilled size={20}/> {location.en}
+        </Text>
+        <Text color="dimmed" size="sm"> 
+      
+          <Badge color="gray" >
+          <IconStarFilled size={11}/> {rate}
+          </Badge>
+          
+        </Text>
+
+      </Group>
+      
+      <Group mt="5px"   position="apart">
+      <Text  variant="outline" color="dimmed" size="sm">
+          {status}
+        </Text>
+
+        <Text  variant="outline" size="sm"  weight={500} style={{backgroundColor:'rgba(0,0,0,0.03)',padding:'2%',borderRadius:'10px', boxShadow: '0px 0px 1px rgba(0,0,0,0.08)'}}>
+          {price} {currency}
+        </Text>
+
+      </Group>
+
+
 
       <Button variant="light" color="blue" fullWidth mt="md" radius="md">
         Book classic tour now
