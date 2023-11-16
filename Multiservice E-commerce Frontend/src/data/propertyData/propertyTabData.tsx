@@ -59,7 +59,239 @@ export const getHousePropertyData = (activeTab, language) => {
           card_image:{
             first:'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' ,
             second:'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          },
+          }
+          ,
+          images:[
+            {
+              id: 1,
+              img:'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 1',
+            },
+            {
+              id: 2,
+              img:'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 2',
+            }
+            ,
+            {
+              id: 3,
+              img:'https://images.unsplash.com/photo-1543886502-1286a5920ad0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 3',
+            },
+            {
+              id: 4,
+              img:'https://plus.unsplash.com/premium_photo-1661963646937-1566cbb38d34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 4',
+            },
+            {
+              id: 5,
+              img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 5',
+            },
+            {
+              id: 6,
+              img:'https://images.unsplash.com/photo-1668911491639-3ab356ec92ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 6',
+            },
+            {
+              id: 7,
+              img:'https://images.unsplash.com/photo-1629236714902-e1926e8ab314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8',
+              caption:'Image 7',
+            },
+            {
+              id: 8,
+              img:'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 8',
+            },
+          ],
+
+          amenities:[
+            {
+              key:{
+                en:'la-key',
+                fr:'la-cle',
+                es:'la-clave',
+                icon:'IconKey',
+              },
+             }
+          ],
+          design_info:[
+            {
+              guests:
+              {
+                en:'Guests',
+                fr:'Invités',
+                es:'Invitados',
+                number:7,
+                icon:'IconUsers',
+              },
+              beds:
+              {
+                en:'beds',
+                fr:'lit',
+                es:'cama',
+                number:8,
+                icon:'IconBed',
+              },
+              bath:
+              {
+                en:'bath room',
+                fr:'salle de bains',
+                es:'baño',
+                number:5,
+                icon:'IconBath',
+              },
+              dinning:
+              {
+                en:'Dining room',
+                fr:'salle à manger',
+                es:'comedor',
+                number:3,
+                icon:'IconDoor',
+              },
+
+            }
+          ],
+          reviews:[
+            {
+              id:1,
+              postedBy:'Jana Kay',
+              avatar:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww',
+              starts:4,
+              content:'Wow! Made buying a house such a breeze! I was new to home buying, and have heard horror stories from friends and family about terrible agents. (RN) was professional and personal! She never made me feel uncomfortable and helped me every step of the way!',
+              likes:{
+                number:4,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:3,
+                      fullname:"Grace Raa",
+                      avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:4,
+                      fullname:"Ave Calvar",
+                      avatar:"https://plus.unsplash.com/premium_photo-1677368597077-009727e906db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                ],
+              },
+              dislike:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              comment:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      content:'I agree with you !!',
+                      likes:23,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      content:'I\'m not sure about it.',
+                      likes:2,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              postedOn:'October, 12, 2023',
+            },
+            {
+              id:2,
+              postedBy:'Peter Joy',
+              avatar:'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww',
+              starts:4,
+              content:'Wow! Made buying a house such a breeze! I was new to home buying, and have heard horror stories from friends and family about terrible agents. (RN) was professional and personal! She never made me feel uncomfortable and helped me every step of the way!',
+              likes:{
+                number:4,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:3,
+                      fullname:"Grace Raa",
+                      avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:4,
+                      fullname:"Ave Calvar",
+                      avatar:"https://plus.unsplash.com/premium_photo-1677368597077-009727e906db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                ],
+              },
+              dislike:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              comment:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      content:'I agree with you !!',
+                      likes:23,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      content:'I\'m not sure about it.',
+                      likes:2,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              postedOn:'January, 09, 2024',
+            }
+          ],
 
       },
       {
@@ -120,7 +352,170 @@ export const getHousePropertyData = (activeTab, language) => {
           card_image:{
               first:'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' ,
               second:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-          },
+          }
+          ,
+          images:[
+            {
+              id: 1,
+              img:'https://images.unsplash.com/photo-1592595896616-c37162298647?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 1',
+            },
+            {
+              id: 2,
+              img:'https://images.unsplash.com/photo-1628133287836-40bd5453bed1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 2',
+            }
+            ,
+            {
+              id: 3,
+              img:'https://images.unsplash.com/photo-1543886502-1286a5920ad0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 3',
+            },
+            {
+              id: 4,
+              img:'https://plus.unsplash.com/premium_photo-1661963646937-1566cbb38d34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 4',
+            },
+            {
+              id: 5,
+              img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 5',
+            },
+            {
+              id: 6,
+              img:'https://images.unsplash.com/photo-1668911491639-3ab356ec92ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 6',
+            },
+            {
+              id: 7,
+              img:'https://images.unsplash.com/photo-1629236714902-e1926e8ab314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8',
+              caption:'Image 7',
+            },
+            {
+              id: 8,
+              img:'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 8',
+            },
+          ],
+
+          amenities:[
+            {
+              key:{
+                en:'la-key',
+                fr:'la-cle',
+                es:'la-clave',
+                icon:'IconKey',
+              },
+             }
+          ],
+          design_info:[
+            {
+              guests:
+              {
+                en:'Guests',
+                fr:'Invités',
+                es:'Invitados',
+                number:7,
+                icon:'IconUsers',
+              },
+              beds:
+              {
+                en:'beds',
+                fr:'lit',
+                es:'cama',
+                number:3,
+                icon:'IconBed',
+              },
+              bath:
+              {
+                en:'bath room',
+                fr:'salle de bains',
+                es:'baño',
+                number:5,
+                icon:'IconBath',
+              },
+              dinning:
+              {
+                en:'Dining room',
+                fr:'salle à manger',
+                es:'comedor',
+                number:3,
+                icon:'IconDoor',
+              },
+
+            }
+          ],
+          reviews:[
+            {
+              id:1,
+              postedBy:'Peter Joy',
+              avatar:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww',
+              starts:4,
+              content:'Wow! Made buying a house such a breeze! I was new to home buying, and have heard horror stories from friends and family about terrible agents. (RN) was professional and personal! She never made me feel uncomfortable and helped me every step of the way!',
+              likes:{
+                number:4,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:3,
+                      fullname:"Grace Raa",
+                      avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:4,
+                      fullname:"Ave Calvar",
+                      avatar:"https://plus.unsplash.com/premium_photo-1677368597077-009727e906db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                ],
+              },
+              dislike:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              comment:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      content:'I agree with you !!',
+                      likes:23,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      content:'I\'m not sure about it.',
+                      likes:2,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              postedOn:'October, 12, 2023',
+            }
+          ],
 
       },
 
@@ -187,6 +582,168 @@ export const getHousePropertyData = (activeTab, language) => {
             first:'https://images.unsplash.com/photo-1560026301-88340cf16be7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D' ,
             second:'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8',
           },
+          images:[
+            {
+              id: 1,
+              img:'https://images.unsplash.com/photo-1592595896616-c37162298647?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 1',
+            },
+            {
+              id: 2,
+              img:'https://images.unsplash.com/photo-1628133287836-40bd5453bed1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 2',
+            }
+            ,
+            {
+              id: 3,
+              img:'https://images.unsplash.com/photo-1543886502-1286a5920ad0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 3',
+            },
+            {
+              id: 4,
+              img:'https://plus.unsplash.com/premium_photo-1661963646937-1566cbb38d34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 4',
+            },
+            {
+              id: 5,
+              img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 5',
+            },
+            {
+              id: 6,
+              img:'https://images.unsplash.com/photo-1668911491639-3ab356ec92ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 6',
+            },
+            {
+              id: 7,
+              img:'https://images.unsplash.com/photo-1629236714902-e1926e8ab314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8',
+              caption:'Image 7',
+            },
+            {
+              id: 8,
+              img:'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 8',
+            },
+          ],
+
+          amenities:[
+            {
+              key:{
+                en:'la-key',
+                fr:'la-cle',
+                es:'la-clave',
+                icon:'IconKey',
+              },
+             }
+          ],
+          design_info:[
+            {
+              guests:
+              {
+                en:'Guests',
+                fr:'Invités',
+                es:'Invitados',
+                number:7,
+                icon:'IconUsers',
+              },
+              beds:
+              {
+                en:'beds',
+                fr:'lit',
+                es:'cama',
+                number:3,
+                icon:'IconBed',
+              },
+              bath:
+              {
+                en:'bath room',
+                fr:'salle de bains',
+                es:'baño',
+                number:5,
+                icon:'IconBath',
+              },
+              dinning:
+              {
+                en:'Dining room',
+                fr:'salle à manger',
+                es:'comedor',
+                number:3,
+                icon:'IconDoor',
+              },
+
+            }
+          ],
+          reviews:[
+            {
+              id:1,
+              postedBy:'Peter Joy',
+              avatar:'',
+              starts:4,
+              content:'Wow! Made buying a house such a breeze! I was new to home buying, and have heard horror stories from friends and family about terrible agents. (RN) was professional and personal! She never made me feel uncomfortable and helped me every step of the way!',
+              likes:{
+                number:4,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:3,
+                      fullname:"Grace Raa",
+                      avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:4,
+                      fullname:"Ave Calvar",
+                      avatar:"https://plus.unsplash.com/premium_photo-1677368597077-009727e906db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                ],
+              },
+              dislike:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              comment:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      content:'I agree with you !!',
+                      likes:23,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      content:'I\'m not sure about it.',
+                      likes:2,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              postedOn:'October, 12, 2023',
+            }
+          ],
 
       },
       {
@@ -248,6 +805,237 @@ export const getHousePropertyData = (activeTab, language) => {
             first:'https://images.unsplash.com/photo-1592595896616-c37162298647?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' ,
             second:'https://images.unsplash.com/photo-1628133287836-40bd5453bed1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
           },
+          images:[
+            {
+              id: 1,
+              img:'https://images.unsplash.com/photo-1592595896616-c37162298647?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 1',
+            },
+            {
+              id: 2,
+              img:'https://images.unsplash.com/photo-1628133287836-40bd5453bed1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 2',
+            }
+            ,
+            {
+              id: 3,
+              img:'https://images.unsplash.com/photo-1543886502-1286a5920ad0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 3',
+            },
+            {
+              id: 4,
+              img:'https://plus.unsplash.com/premium_photo-1661963646937-1566cbb38d34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 4',
+            },
+            {
+              id: 5,
+              img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
+              caption:'Image 5',
+            },
+            {
+              id: 6,
+              img:'https://images.unsplash.com/photo-1668911491639-3ab356ec92ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 6',
+            },
+            {
+              id: 7,
+              img:'https://images.unsplash.com/photo-1629236714902-e1926e8ab314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8',
+              caption:'Image 7',
+            },
+            {
+              id: 8,
+              img:'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              caption:'Image 8',
+            },
+          ],
+
+          amenities:[
+            {
+              key:{
+                en:'la-key',
+                fr:'la-cle',
+                es:'la-clave',
+                icon:'IconKey',
+              },
+             }
+          ],
+          design_info:[
+            {
+              guests:
+              {
+                en:'Guests',
+                fr:'Invités',
+                es:'Invitados',
+                number:7,
+                icon:'IconUsers',
+              },
+              beds:
+              {
+                en:'beds',
+                fr:'lit',
+                es:'cama',
+                number:3,
+                icon:'IconBed',
+              },
+              bath:
+              {
+                en:'bath room',
+                fr:'salle de bains',
+                es:'baño',
+                number:5,
+                icon:'IconBath',
+              },
+              dinning:
+              {
+                en:'Dining room',
+                fr:'salle à manger',
+                es:'comedor',
+                number:3,
+                icon:'IconDoor',
+              },
+
+            }
+          ],
+          reviews:[
+            {
+              id:1,
+              postedBy:'Peter Joy',
+              avatar:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww',
+              starts:4,
+              content:'Wow! Made buying a house such a breeze! I was new to home buying, and have heard horror stories from friends and family about terrible agents. (RN) was professional and personal! She never made me feel uncomfortable and helped me every step of the way!',
+              likes:{
+                number:4,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:3,
+                      fullname:"Grace Raa",
+                      avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:4,
+                      fullname:"Ave Calvar",
+                      avatar:"https://plus.unsplash.com/premium_photo-1677368597077-009727e906db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                ],
+              },
+              dislike:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              comment:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      content:'I agree with you !!',
+                      likes:23,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      content:'I\'m not sure about it.',
+                      likes:2,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              postedOn:'October, 12, 2023',
+            },
+            {
+              id:1,
+              postedBy:'Peter Joy',
+              avatar:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww',
+              starts:4,
+              content:'Wow! Made buying a house such a breeze! I was new to home buying, and have heard horror stories from friends and family about terrible agents. (RN) was professional and personal! She never made me feel uncomfortable and helped me every step of the way!',
+              likes:{
+                number:4,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:3,
+                      fullname:"Grace Raa",
+                      avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:4,
+                      fullname:"Ave Calvar",
+                      avatar:"https://plus.unsplash.com/premium_photo-1677368597077-009727e906db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+                    }
+                ],
+              },
+              dislike:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      fullname:"Peter Joy",
+                      avatar:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              comment:{
+                number:2,
+                users:[
+                    {
+                      id:1,
+                      content:'I agree with you !!',
+                      likes:23,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                    {
+                      id:2,
+                      content:'I\'m not sure about it.',
+                      likes:2,
+                      dislike:0,
+                      fullname:"Jenner Dania",
+                      avatar:"https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
+                    },
+                ],
+              },
+              postedOn:'October, 12, 2023',
+            }
+          ],
 
       },
       // Add more data objects as needed
@@ -330,9 +1118,12 @@ export const getHousePropertyData = (activeTab, language) => {
     // Return the data based on the active tab
     if (activeTab === 'Villa') {
       return villaData;
-    } else {
+    } else if(activeTab === 'Residential') {
       return residentialData;
     } 
+    else{
+      return "No Value";
+    }
     // else if (activeTab === 'Rust') {
     //   return rustData;
     // } else if (activeTab === 'TypeScript') {

@@ -1,16 +1,42 @@
 
 import { createStyles, Image, Card, Text, Group, Button, getStylesRef, rem,Paper,Badge, Avatar, Tooltip } from '@mantine/core';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { IconHeart, IconHeartFilled,IconMapPinFilled,IconUsers,IconStarFilled } from '@tabler/icons-react';
 import styles from './PlaceCard.module.css'; // Import CSS module for styles
+import { useRouter } from 'next/router';
+import CryptoJS from 'crypto-js';
 
-export function PlaceCard({ title, description,mode, rate, status, location, price, currency, dealer, post_date, card_image}) {
+
+export function PlaceCard({ productId, title, description,mode, rate, status, location, price, currency, dealer, post_date, card_image,language,activeTab}) {
   const [isHovered, setIsHovered] = useState(false);
   const [isWishlist, setIsWishlist] = useState(false);
 
   const handleToggleWishlist = () => {
     setIsWishlist(!isWishlist);
   };
+
+  // const encryptParams = (params) => {
+  //   console.log('Language:', language);
+  //   console.log('Active Tab:', activeTab);
+  //   const encryptedParams = CryptoJS.AES.encrypt(JSON.stringify({ language, activeTab }), 'peterjoy_').toString();
+
+  //   return encodeURIComponent(encryptedParams);
+  // };
+
+  // Function to encrypt parameters
+
+const encryptParams = (language, activeTab) => {
+  // Create a JSON object with language and activeTab
+  const paramsObject = { language, activeTab };
+
+  // Encrypt and encode the JSON object
+  const encryptedParams = CryptoJS.AES.encrypt(JSON.stringify(paramsObject), 'peterjoy_').toString();
+
+  return encodeURIComponent(encryptedParams);
+};
+  
+const linkParams = encryptParams(language, activeTab);
 
   return (
 
@@ -24,7 +50,6 @@ export function PlaceCard({ title, description,mode, rate, status, location, pri
     >
       <Card.Section component="a">
         <Image
-          // src={isHovered ? 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80' : 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80'}
           src={isHovered ? card_image.second : card_image.first}
           height={243}
           alt="Norway"
@@ -60,7 +85,7 @@ export function PlaceCard({ title, description,mode, rate, status, location, pri
             alignItems: 'center',
             cursor: 'pointer',
           }}
-          onClick={handleToggleWishlist}
+     
         >
           <Badge color="gray" variant="light">
           {mode}
@@ -81,7 +106,7 @@ export function PlaceCard({ title, description,mode, rate, status, location, pri
             alignItems: 'center',
             cursor: 'pointer',
           }}
-          // onClick={handleToggleWishlist}
+      
         >
           
 
@@ -97,36 +122,26 @@ export function PlaceCard({ title, description,mode, rate, status, location, pri
         Dealer
         </Text>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <Tooltip label="Jenner Dania" withArrow>
-              <Avatar  src="https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww" radius="xl" />
-            </Tooltip>
-            <Tooltip label="Peter Joy" withArrow>
-              <Avatar src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww" radius="xl" />
-            </Tooltip>
-            <Tooltip label="Grace Raa" withArrow>
-              <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww" radius="xl" />
-            </Tooltip>
-            {/* <Tooltip
-              withArrow
-              label={
-                <>
-                  <div>John Outcast</div>
-                  <div>Levi Capitan</div>
-                </>
-              }
-            > */}
-              <Avatar radius="xl">+20</Avatar>
-            {/* </Tooltip> */}
-
+                {dealer.slice(0, 3).map((dealerInfo) => (
+                <Tooltip key={dealerInfo.id} label={dealerInfo.fullname} withArrow>
+                  <Avatar src={dealerInfo.avatar} radius="xl" />
+                </Tooltip>
+              ))}
+              {dealer.length > 3 && (
+                <Tooltip
+                  withArrow
+                  label={`+${dealer.length - 3} more`}
+                >
+                  <Avatar radius="xl">{`+${dealer.length - 3}`}</Avatar>
+                </Tooltip>
+                )}
           </Avatar.Group>
           </Tooltip.Group> 
-      {/* <Text  variant="outline" color="dimmed" size="sm">
-          Unfurnished
-        </Text> */}
+
         </Group>
 
 
-          {/* </Badge> */}
+
         </Paper>
 
       </Card.Section>
@@ -144,7 +159,7 @@ export function PlaceCard({ title, description,mode, rate, status, location, pri
 
       <Group mt="sm"  position="apart">
         <Text color="dimmed" size="sm">
-          {/* {title} */}
+
            <IconMapPinFilled size={20}/> {location.en}
         </Text>
         <Text color="dimmed" size="sm"> 
@@ -169,10 +184,19 @@ export function PlaceCard({ title, description,mode, rate, status, location, pri
       </Group>
 
 
-
-      <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-        Book classic tour now
+      {/* <Link href={{ pathname: `/product/${productId}`, query: { language,activeTab } }} passHref style={{textDecoration:'none'}}>
+      <Button variant="light" color="blue" fullWidth mt="md" radius="md" as="a">
+        View product details
       </Button>
+      </Link> */}
+
+      <Link href={{ pathname: `/product/${productId}`, query: { enc: linkParams } }} passHref style={{textDecoration:'none'}}>
+        <Button variant="light" color="blue" fullWidth mt="md" radius="md" as="a">
+          View product details
+        </Button>
+      </Link>
+
+
     </Card>
   );
 }

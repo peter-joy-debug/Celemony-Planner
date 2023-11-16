@@ -67,7 +67,7 @@ export function HouseProperty({ language, onLanguageChange }) {
       <Grid>
       {getHousePropertyData(activeTab, language).slice(0, 8).map((item) => (
         <Grid.Col xs={3}>
-            <PlaceCard title={item.title[language]} description={item.description[language]} mode={item.mode[language]} rate={item.rate} status={item.status[language]} location={item.location} price={item.price} currency={item.currency} dealer={item.dealer} post_date={item.post_date} card_image={item.card_image} />
+            <PlaceCard productId={item.id} title={item.title[language]} description={item.description[language]} mode={item.mode[language]} rate={item.rate} status={item.status[language]} location={item.location} price={item.price} currency={item.currency} dealer={item.dealer} post_date={item.post_date} card_image={item.card_image} language={language} activeTab={activeTab}/>
         </Grid.Col>
         ))}
 
