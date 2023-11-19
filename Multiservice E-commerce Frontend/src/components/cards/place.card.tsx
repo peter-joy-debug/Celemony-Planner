@@ -16,14 +16,6 @@ export function PlaceCard({ productId, title, description,mode, rate, status, lo
     setIsWishlist(!isWishlist);
   };
 
-  // const encryptParams = (params) => {
-  //   console.log('Language:', language);
-  //   console.log('Active Tab:', activeTab);
-  //   const encryptedParams = CryptoJS.AES.encrypt(JSON.stringify({ language, activeTab }), 'peterjoy_').toString();
-
-  //   return encodeURIComponent(encryptedParams);
-  // };
-
   // Function to encrypt parameters
 
 const encryptParams = (language, activeTab) => {
@@ -118,7 +110,6 @@ const linkParams = encryptParams(language, activeTab);
       <Avatar.Group spacing="sm" style={{backgroundColor:'rgba(0,0,0,0.099)',padding:'3%',borderRadius:'20px',paddingLeft:'0%',width:'180px',}}>
 
       <Text size="sm"  style={{paddingBottom:'1px',paddingLeft:'4%'}} color="#fff">
-        {/* <IconUsers size={20} color="gray" />  */}
         Dealer
         </Text>&nbsp;&nbsp;&nbsp;&nbsp;
 
