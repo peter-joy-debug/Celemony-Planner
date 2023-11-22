@@ -371,31 +371,7 @@ export const getHousePropertyData = (activeTab, language) => {
               img:'https://images.unsplash.com/photo-1543886502-1286a5920ad0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
               caption:'Image 3',
             },
-            {
-              id: 4,
-              img:'https://plus.unsplash.com/premium_photo-1661963646937-1566cbb38d34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
-              caption:'Image 4',
-            },
-            {
-              id: 5,
-              img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
-              caption:'Image 5',
-            },
-            {
-              id: 6,
-              img:'https://images.unsplash.com/photo-1668911491639-3ab356ec92ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              caption:'Image 6',
-            },
-            {
-              id: 7,
-              img:'https://images.unsplash.com/photo-1629236714902-e1926e8ab314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8',
-              caption:'Image 7',
-            },
-            {
-              id: 8,
-              img:'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              caption:'Image 8',
-            },
+           
           ],
 
           amenities:[
@@ -594,36 +570,7 @@ export const getHousePropertyData = (activeTab, language) => {
               caption:'Image 2',
             }
             ,
-            {
-              id: 3,
-              img:'https://images.unsplash.com/photo-1543886502-1286a5920ad0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
-              caption:'Image 3',
-            },
-            {
-              id: 4,
-              img:'https://plus.unsplash.com/premium_photo-1661963646937-1566cbb38d34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
-              caption:'Image 4',
-            },
-            {
-              id: 5,
-              img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHJlc2lkZW50aWFsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D',
-              caption:'Image 5',
-            },
-            {
-              id: 6,
-              img:'https://images.unsplash.com/photo-1668911491639-3ab356ec92ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              caption:'Image 6',
-            },
-            {
-              id: 7,
-              img:'https://images.unsplash.com/photo-1629236714902-e1926e8ab314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8',
-              caption:'Image 7',
-            },
-            {
-              id: 8,
-              img:'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              caption:'Image 8',
-            },
+
           ],
 
           amenities:[

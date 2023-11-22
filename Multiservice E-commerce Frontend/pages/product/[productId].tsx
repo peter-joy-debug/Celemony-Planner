@@ -5,15 +5,21 @@ import { Card, Text, Image, Grid, SimpleGrid, Skeleton,Container, rem, Group, Bu
 import CryptoJS from 'crypto-js';
 import { IconHeart, IconHeartFilled,IconMapPinFilled,IconUsers,IconStarFilled,IconPhotoPlus,IconShare2,IconBed, IconBath, IconDoor, IconBaselineDensitySmall, IconStar,IconMapPin, Icon360View } from '@tabler/icons-react';
 import {SimilarProducts} from './otherProducts';
+import ImageGrid from './imageGrid';
 
 const PRIMARY_COL_HEIGHT = rem(400);
+
+
 
 const ProductDetails = () => {
   const SECONDARY_COL_HEIGHT = rem(192);
   const router = useRouter();
   const { productId, enc } = router.query;
   const [product, setProduct] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('house');
+  // const filteredData = data.filter((item) => item.type === activeCategory);
   const [language, setLanguage] = useState(''); // Initialize language state
+  const [activeTab, setActiveTab] = useState(''); // Initialize language state
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
@@ -27,14 +33,15 @@ const ProductDetails = () => {
       const decryptedParamsObject = JSON.parse(decryptedParams);
 
       // Destructure language and activeTab from decryptedParamsObject
-      const { language: decryptedLanguage, activeTab } = decryptedParamsObject;
+      const { language: decryptedLanguage, activeTab: decryptedTab } = decryptedParamsObject;
       console.log("Language Decrypted: ",decryptedLanguage);
-      console.log("Tab: ",activeTab);
+      console.log("Tab: ",decryptedTab);
       // Set the language state
       setLanguage(decryptedLanguage);
+      setActiveTab(decryptedTab);
 
       // Fetch product data based on the active tab and language
-      const productsData = getHousePropertyData(activeTab, decryptedLanguage);
+      const productsData = getHousePropertyData(decryptedTab, decryptedLanguage);
 
       // Find the product in the array with the matching ID
       const selectedProduct = productsData.find((item) => String(item.id) === productId);
@@ -72,13 +79,13 @@ const ProductDetails = () => {
 
         <Group gap="xl" justify="flex-end" grow>
           <Button> Share &nbsp; <IconShare2 size={16}/></Button>
-          <Button style={{top:'400px', marginLeft:'140px', zIndex:1}}>View More &nbsp;<IconPhotoPlus size={16}/> </Button>
+          {/* <Button style={{top:'400px', marginLeft:'140px', zIndex:1}}>View More &nbsp;<IconPhotoPlus size={16}/> </Button> */}
         </Group>
         </Group>
 
 
 
-        <Grid style={{marginTop:'10px'}}>
+        {/* <Grid style={{marginTop:'10px'}}>
           <Grid.Col span={6}>
           <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
           </Grid.Col>
@@ -95,7 +102,10 @@ const ProductDetails = () => {
                 </Grid.Col>
               </Grid>
           </Grid.Col>
-        </Grid>
+        </Grid> */}
+
+    <ImageGrid images={images} />
+
 
 
         {/* Other Description */}
@@ -192,7 +202,7 @@ const ProductDetails = () => {
     </Tabs>
       <br></br>
       <Text weight="450" size="xl" style={{marginBottom:'15px'}}> Similar Houses </ Text>
-      <SimilarProducts/>
+      <SimilarProducts language={language} activeTab={activeTab} />
       <br></br>
 
       
