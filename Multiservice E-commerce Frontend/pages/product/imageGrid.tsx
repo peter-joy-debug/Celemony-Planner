@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import { Grid, Button, Image, Skeleton,Modal,Drawer,ScrollArea, Paper, Group, Text } from '@mantine/core';
 
@@ -38,19 +38,44 @@ const ImageGrid = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [drawerOpened, setDrawerOpened] = useState(false);
 
-  const openDrawer = (index) => {
-    console.log("Index: ",index);
-    setSelectedImage(index);
-    setDrawerOpened(true);
-    setDisplayedImages(images); // Update displayedImages slice when opening the drawer
-  };
+  // const openDrawer = (index) => {
+  //   console.log("Index: ",index);
+  //   setSelectedImage(index);
+  //   setDrawerOpened(true);
+  //   setDisplayedImages(images); // Update displayedImages slice when opening the drawer
+  // };
 
+  // const closeDrawer = () => {
+  //   setSelectedImage(null);
+  //   setDrawerOpened(false);
+  //   setDisplayedImages(images.slice(0, 5)); // Restore displayedImages slice when closing the drawer
+  //   close();
+  // };
+  const openDrawer = (index) => {
+    console.log("Index: ", index);
+    setSelectedImage(index);
+    setDisplayedImages(images);
+    setDrawerOpened(true);
+    // No need to update displayedImages here
+  };
+  
   const closeDrawer = () => {
     setSelectedImage(null);
     setDrawerOpened(false);
     setDisplayedImages(images.slice(0, 5)); // Restore displayedImages slice when closing the drawer
+
     close();
   };
+
+  useEffect(() => {
+    // Update displayedImages when images prop changes
+    if(drawerOpened===true)
+    {
+      openDrawer();
+    }
+    closeDrawer();
+    
+  }, [images]);
 
   return (
     <>
