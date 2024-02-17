@@ -2,8 +2,10 @@ import React from 'react';
 import { Switch, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { useState } from 'react';
 import {LanguagePicker} from './languages';
+import { Styles } from '@mantine/core';
+
 import {
-  createStyles,
+  createStyles, 
   Header,
   HoverCard,
   Group,

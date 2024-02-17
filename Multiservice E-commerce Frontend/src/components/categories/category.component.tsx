@@ -173,21 +173,20 @@ const data = [
     category: 'Curpet',
     type:'furniture',
   },
-  // {
-  //   image:
-  //     'https://images.unsplash.com/photo-1643208589884-1aa3a8a67b67?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  //   title: 'Flat TVs, Germany',
-  //   category: 'TVs',
-  //   type:'electronic',
-  // },
 ];
 
 
 const categories = [
-  { name: 'Houses', value: 'house' },
+  { name: 'Places', value: 'house' },
   { name: 'Vehicles', value: 'vehicle' },
-  { name: 'Electronics', value: 'electronic' },
-  { name: 'Furnitures', value: 'furniture' },
+  { name: 'Clothes / Decoration', value: 'electronic' },
+  { name: 'Kitchen', value: 'furniture' },
+  { name: 'Photographer', value: 'furniture' },
+  { name: 'MCs', value: 'furniture' },
+  { name: 'Dancers', value: 'furniture' },
+  { name: 'Sonolization', value: 'furniture' },
+  { name: 'Singers', value: 'furniture' },
+  { name: 'Umutahira', value: 'furniture' },
 ];
 
 const useStyles = createStyles((theme) => ({

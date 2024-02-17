@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import {HeaderMegaMenu} from '../src/components/navbar/navbar.component';
-import Carousels from '../src/components/carousel/carousel.component';
+// import Carousels from '../src/components/carousel/carousel.component';
 import {Features} from '../src/components/features/feature.component';
 import {Promotion} from '../src/components/promotional/promotion.component';
 import {Property} from '../src/components/property/property.component';

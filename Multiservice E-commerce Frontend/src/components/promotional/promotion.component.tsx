@@ -2,7 +2,6 @@ import { SimpleGrid, Skeleton, Container, Stack, useMantineTheme, px, Text, Grid
 import {ImageCard} from './category.card';
 import range from '../../assets/img/data.png';
 import { IconBrandAndroid, IconDownload, IconBrandApple } from '@tabler/icons-react';
-// import classes from './HeroContentLeft.module.css';
 
 
 const getChild = (height: number) => <Skeleton height={height} radius="md" animate={false} />;
@@ -70,9 +69,6 @@ export function Promotion() {
 
       <br></br>
       </div>
-
-
-
 
 <div >
 
