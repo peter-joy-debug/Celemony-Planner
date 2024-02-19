@@ -85,12 +85,13 @@ const useStyles = createStyles((theme) => ({
 
 interface CardProps {
   image: string;
+  location: string;
   title: string;
   category: string;
   type:string;
 }
 
-function Cards({ image, title, category, type }: CardProps) {
+function Cards({ image, location, title, category, type }: CardProps) {
   const { classes } = useStyles();
 
   return (
@@ -118,7 +119,7 @@ function Cards({ image, title, category, type }: CardProps) {
       <div>
       <br></br>
       <Title order={3} className={classes.title} style={{color:'white'}}>
-        {title}
+        {title}, {location}
       </Title>
    </div>
    <br></br>
